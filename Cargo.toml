@@ -1,0 +1,30 @@
+[package]
+name = "platzi_course"
+version = "0.1.0"
+edition = "2021"
+
+# Múltiples binarios - cada uno es un programa independiente
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "comparaciones"
+path = "src/bin/comparaciones.rs"
+
+[[bin]]
+name = "features_avanzadas"
+path = "src/bin/features_avanzadas.rs"
+
+[[bin]]
+name = "modulos_demo"
+path = "src/bin/modulos_demo.rs"
+
+[[bin]]
+name = "tipos_enteros"
+path = "src/bin/tipos_enteros.rs"
+
+[dependencies]
+# No hay dependencias externas por ahora, pero aquí irían crates como:
+# serde = "1.0"
+# tokio = { version = "1.0", features = ["full"] }
