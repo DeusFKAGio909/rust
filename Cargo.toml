@@ -24,6 +24,10 @@ path = "src/bin/modulos_demo.rs"
 name = "tipos_enteros"
 path = "src/bin/tipos_enteros.rs"
 
+[[bin]]
+name = "tipos_enteros2"
+path = "src/bin/tipos_enteros2.rs"
+
 [dependencies]
 # No hay dependencias externas por ahora, pero aquí irían crates como:
 # serde = "1.0"

@@ -57,9 +57,9 @@ fn ejemplo_i8_u8() {
     println!("   Calificación: {}% (u8)", calificacion);
     println!("   Días en mes: {} (u8)", dias_mes);
     
-    // ⚠️ ERROR si intentas valores fuera de rango:
-    // let edad_invalida: u8 = 300;  // ❌ ERROR: overflow
-    // let temp_invalida: i8 = 200;  // ❌ ERROR: overflow
+    //  ERROR si intentas valores fuera de rango:
+    // let edad_invalida: u8 = 300;  //  ERROR: overflow
+    // let temp_invalida: i8 = 200;  //  ERROR: overflow
 }
 
 fn ejemplo_i16_u16() {
@@ -85,7 +85,7 @@ fn ejemplo_i16_u16() {
 fn ejemplo_i32_u32() {
     println!("   Rango i32:  -2,147,483,648 a 2,147,483,647");
     println!("   Rango u32:  0 a 4,294,967,295");
-    println!("   ⭐ ESTE ES EL TIPO POR DEFECTO EN RUST");
+    println!("   ESTE ES EL TIPO POR DEFECTO EN RUST");
     
     // i32: Tipo por defecto para enteros con signo
     let numero = 42;  // Rust infiere i32 por defecto
@@ -128,7 +128,7 @@ fn ejemplo_i64_u64() {
 fn ejemplo_i128_u128() {
     println!("   Rango i128:  -170,141,183,460,469,231,731,687,303,715,884,105,728 a ...");
     println!("   Rango u128:  0 a 340,282,366,920,938,463,463,374,607,431,768,211,455");
-    println!("   ⚠️ Usar solo cuando realmente necesites números ENORMES");
+    println!("    Usar solo cuando realmente necesites números ENORMES");
     
     // i128: Para cálculos científicos o financieros muy grandes
     let distancia_astronomica: i128 = 9_461_000_000_000_000;  // 1 año luz en km
@@ -148,7 +148,7 @@ fn ejemplo_isize_usize() {
     println!("   isize/usize: Tamaño depende de tu arquitectura");
     println!("   - 32-bit: 32 bits (como i32/u32)");
     println!("   - 64-bit: 64 bits (como i64/u64)");
-    println!("   ⭐ USAR PARA: Índices de arrays, tamaños, offsets");
+    println!("    USAR PARA: Índices de arrays, tamaños, offsets");
     
     // usize: Para índices y tamaños (siempre positivo)
     let tamaño_array: usize = 1000;
@@ -163,47 +163,47 @@ fn ejemplo_isize_usize() {
     println!("   Longitud string: {} (usize)", longitud_string);
     println!("   Offset: {} (isize)", offset);
     
-    // ⚠️ IMPORTANTE: Vec, arrays, slices usan usize para índices
+    //  IMPORTANTE: Vec, arrays, slices usan usize para índices
     let vec = vec![1, 2, 3, 4, 5];
-    let indice: usize = 2;  // ✅ Correcto
-    // let indice: u32 = 2;  // ❌ ERROR: necesitas usize
+    let indice: usize = 2;  //  Correcto
+    // let indice: u32 = 2;  // Incorrecto ERROR: necesitas usize
     println!("   Elemento en índice {}: {}", indice, vec[indice]);
 }
 
 fn casos_practicos() {
-    println!("\n   📋 GUÍA RÁPIDA: ¿Qué tipo usar?");
+    println!("\n   GUÍA RÁPIDA: ¿Qué tipo usar?");
     println!("\n   EDAD:");
     println!("      Edad de persona: u8 (0-255 años es suficiente)");
     let edad: u8 = 9;
-    println!("      Ejemplo: {} años -> u8 ✅", edad);
+    println!("      Ejemplo: {} años -> u8 ", edad);
     
     println!("\n   TEMPERATURA:");
     println!("      Temperatura Celsius: i8 (puede ser negativa, rango -128 a 127)");
     let temp: i8 = -10;
-    println!("      Ejemplo: {}°C -> i8 ✅", temp);
+    println!("      Ejemplo: {}°C -> i8 ", temp);
     
     println!("\n   AÑO:");
     println!("      Año calendario: u16 (0-65535 cubre desde año 0 hasta 65535)");
     let año: u16 = 2024;
-    println!("      Ejemplo: {} -> u16 ✅", año);
+    println!("      Ejemplo: {} -> u16 (correcto)", año);
     
     println!("\n   POBLACIÓN:");
     println!("      Ciudad pequeña: u16 (hasta 65,535 personas)");
     println!("      Ciudad grande: u32 (hasta 4 mil millones)");
     println!("      País/Mundo: u64 (hasta 18 quintillones)");
     let poblacion_ciudad: u32 = 1_500_000;
-    println!("      Ejemplo: {} habitantes -> u32 ✅", poblacion_ciudad);
+    println!("      Ejemplo: {} habitantes -> u32 (Correcto)", poblacion_ciudad);
     
     println!("\n   DINERO:");
     println!("      Centavos en cuenta pequeña: i32");
     println!("      Centavos en cuenta grande: i64");
     let saldo_centavos: i32 = -5000;  // -50.00 unidades
-    println!("      Ejemplo: {} centavos -> i32 ✅", saldo_centavos);
+    println!("      Ejemplo: {} centavos -> i32 Correcto", saldo_centavos);
     
     println!("\n   ÍNDICES Y TAMAÑOS:");
     println!("      SIEMPRE usa usize para índices de arrays/vecs");
     let indice: usize = 0;
-    println!("      Ejemplo: índice {} -> usize ✅", indice);
+    println!("      Ejemplo: índice {} -> usize Correcto", indice);
     
     println!("\n   REGLA GENERAL:");
     println!("      - Si no estás seguro: usa i32 (tipo por defecto)");
@@ -214,32 +214,32 @@ fn casos_practicos() {
 }
 
 fn errores_comunes() {
-    println!("\n   ⚠️ ERRORES COMUNES:");
+    println!("\n    ERRORES COMUNES:");
     
     println!("\n   1. OVERFLOW (valores fuera de rango):");
-    println!("      let edad: u8 = 300;  // ❌ ERROR: u8 solo llega a 255");
+    println!("      let edad: u8 = 300;  //  ERROR: u8 solo llega a 255");
     println!("      Solución: usar u16 o u32");
     
     println!("\n   2. USAR TIPO INCORRECTO PARA ÍNDICES:");
     println!("      let vec = vec![1, 2, 3];");
     println!("      let i: u32 = 0;");
-    println!("      vec[i];  // ❌ ERROR: necesita usize");
+    println!("      vec[i];  //  ERROR: necesita usize");
     println!("      Solución: let i: usize = 0;");
     
     println!("\n   3. USAR TIPO MUY GRANDE INNECESARIAMENTE:");
-    println!("      let edad: i128 = 25;  // ❌ Ineficiente");
-    println!("      Solución: let edad: u8 = 25;  // ✅ Suficiente");
+    println!("      let edad: i128 = 25;  //  Ineficiente");
+    println!("      Solución: let edad: u8 = 25;  //  Suficiente");
     
     println!("\n   4. NO ESPECIFICAR TIPO CUANDO ES NECESARIO:");
     println!("      let numero = 100;  // Rust infiere i32");
     println!("      Si necesitas u8 específicamente:");
-    println!("      let numero: u8 = 100;  // ✅ Explícito");
+    println!("      let numero: u8 = 100;  //  Explícito");
     
     println!("\n   5. CONFUNDIR SIGNED/UNSIGNED:");
-    println!("      let temperatura: u8 = -10;  // ❌ ERROR: u8 no puede ser negativo");
-    println!("      Solución: let temperatura: i8 = -10;  // ✅");
+    println!("      let temperatura: u8 = -10;  //  ERROR: u8 no puede ser negativo");
+    println!("      Solución: let temperatura: i8 = -10;  // ");
     
-    println!("\n   💡 TIP: Deja que Rust infiera el tipo cuando sea posible:");
+    println!("\n    TIP: Deja que Rust infiera el tipo cuando sea posible:");
     println!("      let edad = 9;  // Rust usa i32 por defecto");
     println!("      Si necesitas optimizar memoria, especifica:");
     println!("      let edad: u8 = 9;  // Ocupa menos memoria");

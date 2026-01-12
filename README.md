@@ -2,10 +2,17 @@
 
 Este proyecto contiene ejemplos educativos avanzados de Rust que no se enseñan normalmente en tutoriales básicos.
 
+## 📁 Estructura del Proyecto
+
+```
 platzi_course/
 │
 ├── Cargo.toml          ← Configuración del proyecto
-│                         (dice dónde están los binarios y tambien dependencias y nombres del proyecto)
+│                         (dice dónde están los binarios, dependencias y nombres)
+│
+├── README.md           ← Este archivo
+│
+├── .gitignore          ← Archivos ignorados por Git
 │
 ├── src/                ← CÓDIGO FUENTE (lo que escribes)
 │   │
@@ -19,18 +26,24 @@ platzi_course/
 │   │   │                Convención especial de Cargo
 │   │   ├── comparaciones.rs      → cargo run --bin comparaciones
 │   │   ├── tipos_enteros.rs      → cargo run --bin tipos_enteros
-│   │   └── features_avanzadas.rs → cargo run --bin features_avanzadas
+│   │   ├── tipos_enteros2.rs     → cargo run --bin tipos_enteros2
+│   │   ├── features_avanzadas.rs → cargo run --bin features_avanzadas
+│   │   └── modulos_demo.rs       → cargo run --bin modulos_demo
 │   │
 │   └── modulos/        ← TUS MÓDULOS PERSONALES (organización)
-│       ├── mod.rs      ← Punto de entrada
+│       ├── mod.rs      ← Punto de entrada del módulo
 │       ├── matematicas.rs
-│       └── strings.rs
+│       ├── strings.rs
+│       └── estructuras.rs
 │
 └── target/             ← ARCHIVOS COMPILADOS (generados automáticamente)
     └── debug/
         ├── main.exe              ← main.rs compilado
         ├── comparaciones.exe     ← comparaciones.rs compilado
-        └── tipos_enteros.exe     ← tipos_enteros.rs compilado
+        ├── tipos_enteros.exe     ← tipos_enteros.rs compilado
+        ├── tipos_enteros2.exe    ← tipos_enteros2.rs compilado
+        ├── features_avanzadas.exe ← features_avanzadas.rs compilado
+        └── modulos_demo.exe      ← modulos_demo.rs compilado
 ```
 
 ## 🚀 Cómo Ejecutar
@@ -46,6 +59,12 @@ cargo run --bin main
 ```bash
 # Comparaciones Rust vs Python vs C++
 cargo run --bin comparaciones
+
+# Guía completa de tipos de enteros (versión original)
+cargo run --bin tipos_enteros
+
+# Guía de tipos de enteros (versión mejorada con explicaciones)
+cargo run --bin tipos_enteros2
 
 # Features avanzadas (lifetimes, traits, macros, etc.)
 cargo run --bin features_avanzadas
